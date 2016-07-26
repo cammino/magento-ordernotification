@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Cammino_Ordernotification>
+			<version>0.1.0</version>
+		</Cammino_Ordernotification>
+	</modules>
+	<global>	
+		<models>
+			<ordernotification>
+				<class>Cammino_Ordernotification_Model</class>
+			</ordernotification>
+		</models>
+		<events>
+			<sales_order_place_after>
+				<observers>
+					<ordernotification_observer>
+						<type>singleton</type>
+						<class>Cammino_Ordernotification_Model_Observer</class>
+						<method>sendNotification</method>
+					</ordernotification_observer>
+				</observers>
+			</sales_order_place_after>
+		</events>
+	</global>
+</config>
