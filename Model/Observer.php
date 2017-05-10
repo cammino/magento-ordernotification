@@ -2,9 +2,7 @@
 class Cammino_Ordernotification_Model_Observer extends Varien_Object
 {
 	public function sendNotification(Varien_Event_Observer $observer) {
-
 		try {
-
 			$active = Mage::getStoreConfig("sales_email/ordernotification/active");
 
 			if (intval($active) == 1) {
